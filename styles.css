@@ -1,22 +1,22 @@
 
 :root {  
   /* Base surfaces */  
-  --bg: #f8fafc;  
-  --ink: #0f172a;  
-  --muted: #475569;  
-  --muted2: #64748b;  
+  --bg: #fff5f8;  
+  --ink: #2b0f1c;  
+  --muted: #7a3a52;  
+  --muted2: #9b5a72;  
   
   /* Borders & surfaces */  
-  --border: #e5e7eb;  
-  --soft: #f1f5f9;  
+  --border: #f3c6d4;  
+  --soft: #ffe6ee;  
   
-  /* Medical accent */  
-  --accent: #1e4e5f;  
-  --accentSoft: #e6f1f4;  
+  /* 🌸 Pink accent */  
+  --accent: #db2777;        /* main pink */  
+  --accentSoft: #fbcfe8;    /* soft pink background */  
   
   /* Shadows */  
-  --shadow: 0 18px 40px rgba(2, 6, 23, 0.10);  
-  --shadow2: 0 12px 26px rgba(2, 6, 23, 0.08);  
+  --shadow: 0 18px 40px rgba(236, 72, 153, 0.18);  
+  --shadow2: 0 12px 26px rgba(236, 72, 153, 0.14);  
   
   /* Radius */  
   --r: 18px;  

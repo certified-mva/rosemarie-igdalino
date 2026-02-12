@@ -1,18 +1,26 @@
 
-
-:root{
-  --bg:#ffffff;
-  --ink:#0f172a;
-  --muted:#475569;
-  --muted2:#64748b;
-  --border:#e7e9f2;
-  --soft:#f7f8fb;
-  --accent:#2563eb;
-  --accentSoft:#eff6ff;
-  --shadow: 0 14px 32px rgba(2,6,23,.08);
-  --shadow2: 0 10px 22px rgba(2,6,23,.06);
-  --r: 18px;
-}
+:root {  
+  /* Base surfaces */  
+  --bg: #f8fafc;  
+  --ink: #0f172a;  
+  --muted: #475569;  
+  --muted2: #64748b;  
+  
+  /* Borders & surfaces */  
+  --border: #e5e7eb;  
+  --soft: #f1f5f9;  
+  
+  /* Medical accent */  
+  --accent: #1e4e5f;  
+  --accentSoft: #e6f1f4;  
+  
+  /* Shadows */  
+  --shadow: 0 18px 40px rgba(2, 6, 23, 0.10);  
+  --shadow2: 0 12px 26px rgba(2, 6, 23, 0.08);  
+  
+  /* Radius */  
+  --r: 18px;  
+}  
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -63,13 +71,13 @@ a:hover{text-decoration:underline}
 .nav-cta:hover{opacity:.95;text-decoration:none}
 
 /* HERO */
-.hero{
-  padding:62px 0 22px;
-  background:
-    radial-gradient(900px 520px at 12% -10%, rgba(37,99,235,.10), transparent 60%),
-    radial-gradient(900px 520px at 92% 10%, rgba(37,99,235,.08), transparent 55%),
-    #fff;
-}
+.hero{  
+  padding:62px 0 22px;  
+  background:  
+    radial-gradient(900px 520px at 10% -10%, rgba(37,99,235,.12), transparent 60%),  
+    radial-gradient(900px 520px at 90% 10%, rgba(20,184,166,.10), transparent 55%),  
+    #ffffff;  
+}  
 .hero-wrap{
   display:grid;
   grid-template-columns: 1.25fr .85fr;
@@ -177,10 +185,10 @@ h1{
 
 /* SECTIONS */
 .section{padding:64px 0}
-.section.alt{
-  background: var(--soft);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
+.section.alt {  
+  background: linear-gradient(180deg, #f8fafc, #f1f5f9);  
+  border-top: 1px solid var(--border);  
+  border-bottom: 1px solid var(--border);  
 }
 .section-head{max-width:86ch;margin:0 auto 18px}
 .center{text-align:center}
@@ -259,7 +267,7 @@ h2{
 .cta{
   margin-top:18px;
   border:1px solid #cfe0ff;
-  background: linear-gradient(180deg,#fff,var(--accentSoft));
+  background: linear-gradient(180deg, #ffffff, var(--accentSoft));
   border-radius: 22px;
   padding:22px;
   text-align:center;
@@ -296,7 +304,9 @@ h2{
 .footer{
   border-top:1px solid var(--border);
   padding:26px 0;
-  background:#fff;
+  background: linear-gradient(180deg, #0b2f3a, #020617);  
+  padding: 60px 20px 30px;  
+  text-align: center;
 }
 .foot{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;flex-wrap:wrap}
 .foot-name{margin:0;font-weight:900}
@@ -304,12 +314,24 @@ h2{
 .foot-copy{margin:0;color:var(--muted2);font-weight:700}
 
 /* SCROLL ANIMATIONS */
-.reveal{
-  opacity:0;
-  transform: translateY(14px);
-  transition: opacity .7s ease, transform .7s ease;
-  will-change: opacity, transform;
-}
+.reveal {  
+  opacity: 0;  
+  transform: translateY(20px);  
+  transition:  
+    opacity 0.7s cubic-bezier(.22,1,.36,1),  
+    transform 0.7s cubic-bezier(.22,1,.36,1);  
+  will-change: opacity, transform;  
+}  
+  
+.reveal.in {  
+  opacity: 1;  
+  transform: translateY(0);  
+}  
+  
+.reveal.in {  
+  opacity: 1;  
+  transform: translateY(0);  
+}  
 .reveal.in{opacity:1; transform: translateY(0)}
 .reveal-delay-1{transition-delay:.08s}
 .reveal-delay-2{transition-delay:.16s}
@@ -327,12 +349,65 @@ h2{
   .contact{grid-template-columns: 1fr}
 }
 @media (max-width: 620px){
-  .nav-links{display:none}
+  
   h1{font-size:34px}
   .hero-metrics{grid-template-columns: 1fr}
   .grid-2{grid-template-columns: 1fr}
   .grid-3{grid-template-columns: 1fr}
 }
+/* =========================================  
+   MOBILE TEXT-ONLY HEADER  
+   (NO VM LOGO / NO GET IN TOUCH)  
+   ========================================= */  
+  
+@media (max-width: 620px){  
+  
+  /* Hide logo & CTA */  
+  .brand,  
+  .brand-mark,  
+  .brand-name,  
+  .nav-cta{  
+    display: none !important;  
+  }  
+  
+  /* Center nav links */  
+  .nav{  
+    justify-content: center;  
+    padding: 10px 0;  
+  }  
+  
+  .nav-links{  
+    gap: 12px;  
+    flex-wrap: nowrap;  
+  }  
+  
+  .nav-links a{  
+    font-size: 13px;  
+    font-weight: 700;  
+    white-space: nowrap;  
+  }  
+}  
+  
+/* =========================================  
+   EXTRA COMPACT — VERY SMALL PHONES  
+   ========================================= */  
+  
+@media (max-width: 480px){  
+  .nav-links{  
+    gap: 8px;  
+  }  
+  
+  .nav-links a{  
+    font-size: 12px;  
+  }  
+}  
+  
+  .nav-cta{  
+    padding: 8px 10px;  
+    font-size: 12px;  
+    border-radius: 12px;  
+  }  
+}  
 .footer {
   background: linear-gradient(180deg, #020617, #0f172a);
   padding: 60px 20px 30px;
@@ -436,3 +511,185 @@ h2{
   color: #ffffff;
   cursor: pointer;
 }
+/* existing styles above */  
+@media (max-width: 768px){  
+  ...  
+}  
+  
+@media (max-width: 620px){  
+  
+  /* Hide "Why Outsource" link on mobile only */  
+  .nav-links a[href="#why-outsource"]{  
+    display: none !important;  
+  }  
+  
+}  
+  
+/* ================================  
+   EXTRA COMPACT HEADER — VERY SMALL PHONES  
+   ================================ */  
+  
+@media (max-width: 480px){  
+  
+  .nav{  
+    padding: 8px 0;  
+    gap: 6px;  
+  }  
+  
+  .brand{  
+    gap: 6px;  
+  }  
+  
+  .brand-mark{  
+    width: 34px;  
+    height: 34px;  
+    font-size: 13px;  
+    border-radius: 10px;  
+  }  
+  
+  .nav-links{  
+    gap: 8px;  
+  }  
+  
+  .nav-links a{  
+    font-size: 11px;  
+    letter-spacing: .1px;  
+  }  
+  
+  .nav-cta{  
+    padding: 6px 8px;  
+    font-size: 11px;  
+    border-radius: 10px;  
+  }  
+}  
+/* existing styles above */  
+@media (max-width: 768px){  
+  ...  
+}  
+  
+@media (max-width: 620px){  
+  ...  
+}  
+  
+/* ================================  
+   EXTRA COMPACT HEADER — VERY SMALL PHONES  
+   ================================ */  
+  
+@media (max-width: 480px){  
+  
+  .nav{  
+    padding: 8px 0;  
+    gap: 6px;  
+  }  
+  
+  .brand{  
+    gap: 6px;  
+  }  
+  
+  .brand-mark{  
+    width: 34px;  
+    height: 34px;  
+    font-size: 13px;  
+    border-radius: 10px;  
+  }  
+  
+  .nav-links{  
+    gap: 8px;  
+  }  
+  
+  .nav-links a{  
+    font-size: 11px;  
+    letter-spacing: .1px;  
+  }  
+  
+  .nav-cta{  
+    padding: 6px 8px;  
+    font-size: 11px;  
+    border-radius: 10px;  
+  }  
+}  
+/* =========================================  
+   EXTRA COMPACT HEADER — VERY SMALL PHONES  
+   (VM + NAV + GET IN TOUCH)  
+   ========================================= */  
+  
+@media (max-width: 480px){  
+  
+  /* Entire header row */  
+  .nav{  
+    padding: 6px 0;  
+    gap: 6px;  
+  }  
+  
+  /* VM / Brand */  
+  .brand{  
+    gap: 6px;  
+  }  
+  
+  .brand-mark{  
+    width: 32px;  
+    height: 32px;  
+    font-size: 12px;  
+    border-radius: 9px;  
+  }  
+  
+  .brand span,  
+  .brand-name{  
+    font-size: 12px;  
+    line-height: 1;  
+  }  
+  
+  /* Navigation links */  
+  .nav-links{  
+    gap: 6px;  
+  }  
+  
+  .nav-links a{  
+    font-size: 11px;  
+    letter-spacing: .1px;  
+    padding: 2px 0;  
+  }  
+  
+  /* ✅ Get in Touch button */  
+  .nav-cta{  
+    padding: 5px 8px;  
+    font-size: 11px;  
+    border-radius: 9px;  
+    min-height: auto;  
+  }  
+}  
+/* =========================================  
+   MOBILE TEXT-ONLY HEADER  
+   (NO VM LOGO / NO GET IN TOUCH)  
+   ========================================= */  
+  
+@media (max-width: 620px){  
+  
+  /* Hide VM / Brand */  
+  .brand,  
+  .brand-mark,  
+  .brand-name{  
+    display: none !important;  
+  }  
+  
+  /* Hide CTA button */  
+  .nav-cta{  
+    display: none !important;  
+  }  
+  
+  /* Center the navigation */  
+  .nav{  
+    justify-content: center;  
+    padding: 10px 0;  
+  }  
+  
+  .nav-links{  
+    gap: 12px;  
+  }  
+  
+  .nav-links a{  
+    font-size: 13px;  
+    font-weight: 700;  
+    white-space: nowrap;  
+  }  
+}  

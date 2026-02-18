@@ -399,24 +399,8 @@ I ensure faster approvals and uninterrupted procedure schedules — always 100% 
       <div class="container">
         <div class="section-head reveal center">
           <p class="kicker">RESULTS</p>
-          <h2>What Pain Management Practices Achieve With Dedicated Prior Auth Support</h2> 
-        </div>
-<!-- Achievement Certificates -->  
-<div class="certificates reveal">  
-  
-  <div class="cert-slider-container">  
-    <button class="cert-nav prev">❮</button>  
-  
-    <div class="cert-slider">  
-      <img src="Certificate1.png.jpeg" alt="Top Performer Certificate">  
-      <img src="Certificate2.png.jpeg" alt="Quality Analyst Certificate">  
-      <img src="Certificate3.png.jpeg" alt="Kudos!">  
-    </div>  
-  
-    <button class="cert-nav next">❯</button>  
+          <h2>What Pain Management Practices Achieve With Dedicated Prior Auth Support</h2>
   </div>  
-  
-</div>  
         
         <div class="grid-3">
           <div class="card reveal"><p>Faster approvals for procedures and medications</p></div>
@@ -575,85 +559,12 @@ to ensure timely follow-ups and payer communication.
     }
   });
    <script>  
-document.addEventListener("DOMContentLoaded", () => {  
-  
-  /* ===== CERTIFICATE SLIDER ===== */  
-  const certSlider = document.querySelector('.cert-slider');  
-  const certImages = document.querySelectorAll('.cert-slider img');  
-  const certPrev = document.querySelector('.cert-nav.prev');  
-  const certNext = document.querySelector('.cert-nav.next');  
-  
-  /* Safety check */  
-  if (!certSlider || certImages.length === 0) return;  
-  
-  let certIndex = 0;  
-  
-  function showCert(i) {  
-    certSlider.style.transform = `translateX(${-i * 100}%)`;  
-  }  
-  
-  /* Button navigation */  
-  if (certNext && certPrev) {  
-    certNext.addEventListener('click', () => {  
-      certIndex = (certIndex + 1) % certImages.length;  
-      showCert(certIndex);  
-    });  
-  
-    certPrev.addEventListener('click', () => {  
-      certIndex = (certIndex - 1 + certImages.length) % certImages.length;  
-      showCert(certIndex);  
-    });  
-  }  
-  
-  /* Swipe support */  
-  let startX = 0;  
-  
-  certSlider.addEventListener('touchstart', (e) => {  
-    startX = e.touches[0].clientX;  
-  }, { passive: true });  
-  
-  certSlider.addEventListener('touchend', (e) => {  
-    const endX = e.changedTouches[0].clientX;  
-    if (startX - endX > 50) certNext?.click();  
-    if (endX - startX > 50) certPrev?.click();  
-  });  
-  
-  /* Tap to zoom */  
-  const certModal = document.getElementById('certModal');  
-  const certZoomImg = document.getElementById('certZoomImg');  
-  const certClose = document.querySelector('.cert-close');  
-  
-  if (certModal && certZoomImg) {  
-    certImages.forEach(img => {  
-      img.addEventListener('click', () => {  
-        certModal.style.display = 'flex';  
-        certZoomImg.src = img.src;  
-      });  
-    });  
-  
-    certClose?.addEventListener('click', () => {  
-      certModal.style.display = 'none';  
-    });  
-  
-    certModal.addEventListener('click', (e) => {  
-      if (e.target === certModal) {  
-        certModal.style.display = 'none';  
-      }  
-    });  
-  }  
-  
-});  
-
+document.addEventListener("DOMContentLoaded", () => {
 </script>
  <!-- Image Modal -->
 <div id="imageModal" class="image-modal" onclick="closeImageModal()">
   <span class="modal-close">&times;</span>
   <img id="modalImage" alt="Expanded profile photo" />
-</div>
-          <!-- Certificate Zoom Modal -->  
-<div class="cert-modal" id="certModal">  
-  <span class="cert-close">&times;</span>  
-  <img class="cert-modal-content" id="certZoomImg">  
-</div>  
+</div> 
 </body>
 </html>

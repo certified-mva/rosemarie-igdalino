@@ -40,7 +40,18 @@ body{
   line-height: 1.6;  
   letter-spacing: 0.01em;  
 }  
-
+/* Header uses same font as body */  
+.site-header,  
+.site-header * {  
+  font-family: 'Plus Jakarta Sans',  
+               -apple-system,  
+               BlinkMacSystemFont,  
+               'Segoe UI',  
+               Roboto,  
+               Helvetica,  
+               Arial,  
+               sans-serif;  
+}  
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -121,7 +132,6 @@ h2{
   line-height:1.18;  
   letter-spacing:-0.025em;  
 }  
-
 .lead{
   margin:0 0 18px;
   color:var(--muted);
@@ -472,11 +482,21 @@ h2{
   transform: translateY(-2px);
 }
 
-.footer-social svg {
-  width: 18px;
-  height: 18px;
-  fill: #e5e7eb;
-}
+.footer-social i {  
+  font-size: 18px;  
+  color: #e5e7eb;  
+}  
+.footer-social a:hover .fa-envelope {  
+  color: #60a5fa;  
+}  
+  
+.footer-social a:hover .fa-whatsapp {  
+  color: #25D366;  
+}  
+  
+.footer-social a:hover .fa-linkedin-in {  
+  color: #0A66C2;  
+}  
 
 .foot-copy {
   margin-top: 10px;
